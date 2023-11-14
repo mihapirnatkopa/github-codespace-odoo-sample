@@ -7,10 +7,10 @@ services:
       - "host.docker.internal:host-gateway"
     ports:
       - "8069:8069"
-    #volumes:
-    #  - odoo-web-data:/var/lib/odoo
-    #  - ./config:/etc/odoo
-    #  - ./addons:/mnt/extra-addons
+    volumes:
+      - ./data:/var/lib/odoo
+      - ./config:/etc/odoo
+      - ../addons:/mnt/extra-addons
     environment:
     - HOST=host.docker.internal
     - USER=odoo
