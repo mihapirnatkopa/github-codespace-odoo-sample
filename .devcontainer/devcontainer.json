@@ -16,8 +16,15 @@
 			"extensions": [
 				"ms-python.python",
 				"ms-python.vscode-pylance",
+
+				// sql tools
 				"mtxr.sqltools",
-				"mtxr.sqltools-driver-pg"
+				"mtxr.sqltools-driver-pg",
+
+				// some nice extensions for pdf, md, csv,...
+				"tomoki1207.pdf",
+				"shd101wyy.markdown-preview-enhanced",
+				"mechatroner.rainbow-csv"
 			],
 			"settings": {
 				"sqltools.connections": [
