@@ -1,0 +1,20 @@
+version: '3.1'
+services:
+  pgadmin:
+    container_name: pgadmin4
+    image: dpage/pgadmin4:7
+    #build:
+      #context: .
+      #dockerfile: Dockerfile
+      #target: dev
+    restart: unless-stopped
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: test
+      PGADMIN_CONFIG_WTF_CSRF_CHECK_DEFAULT: 'False'
+      PGADMIN_CONFIG_WTF_CSRF_ENABLED: 'False'
+      PGADMIN_CONFIG_SERVER_MODE: 'False'
+      PGADMIN_CONFIG_MASTER_PASSWORD_REQUIRED: 'False'
+    #volumes:
+        #- ./pgadmin/servers.json:/pgadmin4/servers.json # preconfigured servers/connections
+        #- ./pgadmin/pgpass:/pgadmin4 # passwords for the connections in this file
