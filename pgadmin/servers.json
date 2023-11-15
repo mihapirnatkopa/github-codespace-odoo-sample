@@ -1,0 +1,15 @@
+{
+    "Servers": {
+      "1": {
+        "Name": "odoodb",
+        "Group": "odoo",
+        "Host": "db",
+        "Port": 15432,
+        "MaintenanceDB": "odoodb",
+        "Username": "odoo",
+        "PassFile": "/pgpass",
+        "SSLMode": "disable",
+        "Shared": true
+      }
+    }
+  }

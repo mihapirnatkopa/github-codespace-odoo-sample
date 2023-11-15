@@ -4,11 +4,8 @@
 	"service": "app",
 	"workspaceFolder": "/workspace",
 	"features": {
-		"ghcr.io/devcontainers/features/docker-in-docker:2": {
-			"version": "latest",
-			"enableNonRootDocker": "true",
-			"moby": "true"
-		}
+		"ghcr.io/devcontainers/features/docker-in-docker:2": {}
+
 	},
 	"customizations": {
 		"vscode": {
@@ -41,7 +38,7 @@
 	},
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	"forwardPorts": [
-		8000, 5432, 8069
+		8069, 5432, 80
 	],
 	// Use 'postCreateCommand' to run commands after the container is created.
 	"postCreateCommand": "docker-compose -f odoo/docker-compose.yml up -d",
