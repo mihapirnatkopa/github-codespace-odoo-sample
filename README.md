@@ -1,11 +1,14 @@
 # GitHub Codespaces ♥️ Odoo sample
 
 ## Odoo login
-User: admin
-Pass: test
+User: admin\
+Pass: admin\
 
 
-## Pgadmin login
-User: admin@admin.com
-Pass: test
+## Pgadmin connection setup
+Host: db\
+Database: odoodb\
+User: odoo\
+Pass: myodoo
+
 

@@ -42,5 +42,16 @@
 	],
 	// Use 'postCreateCommand' to run commands after the container is created.
 	"postCreateCommand": "docker-compose -f odoo/docker-compose.yml up -d",
-	"remoteUser": "vscode"
+	"remoteUser": "vscode",
+	"portsAttributes": {
+		"80": {
+			"label": "pgAdmin4"
+		},
+		"5432": {
+			"label": "PostgresSQL"
+		},
+		"8069": {
+			"label": "Odoo"
+		}
+	}
 }
