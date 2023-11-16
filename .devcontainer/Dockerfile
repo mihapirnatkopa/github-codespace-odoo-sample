@@ -6,6 +6,8 @@ USER root
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && apt-get -y install --no-install-recommends postgresql-client git
 
+RUN pip3 install pytest-odoo coverage pytest-html
+
 USER odoo
 # change shell to bash for terminal to work https://stackoverflow.com/a/72897273/4078503
 ENV SHELL /bin/bash

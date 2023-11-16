@@ -1,3 +1,4 @@
 odoo/data/*
 odoo/config/*
 !odoo/config/odoo.conf
+__pycache__

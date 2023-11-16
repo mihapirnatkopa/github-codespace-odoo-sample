@@ -9,10 +9,10 @@ services:
     volumes:
       - ../odoo/config:/etc/odoo
       - ..:/workspace:cached
+      - ../addons:/mnt/extra-addons
+      
     environment:
-    - HOST=db
-    - USER=odoo
-    - PASSWORD=myodoo
+    - OPENERP_SERVER=/etc/odoo/odoo.conf # pytest-odoo config
 
     # Runs app on the same network as the database container,
     # allows "forwardPorts" in devcontainer.json function
