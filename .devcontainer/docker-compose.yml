@@ -26,6 +26,7 @@ services:
     restart: always
     volumes:
       - postgres-data:/var/lib/postgresql/data
+      - ../postgres/pg_hba.conf:/var/lib/postgresql/data/pg_hba.conf
     environment:
       - POSTGRES_DB=postgres
       - POSTGRES_PASSWORD=myodoo
