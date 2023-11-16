@@ -29,10 +29,9 @@ services:
       - POSTGRES_DB=postgres
       - POSTGRES_PASSWORD=myodoo
       - POSTGRES_USER=odoo
-    command:
-      - "postgres"
-      - "-c"
-      - "track_activity_query_size=1048576"
+    command: ["postgres", "-c", "log_statement=all"]
+
+
   pgadmin:
     container_name: pgadmin4_container
     image: dpage/pgadmin4
