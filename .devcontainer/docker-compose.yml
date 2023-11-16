@@ -26,13 +26,11 @@ services:
     restart: always
     volumes:
       - postgres-data:/var/lib/postgresql/data
-      - ../postgres/pg_hba.conf:/var/lib/postgresql/data/pg_hba.conf
     environment:
       - POSTGRES_DB=postgres
       - POSTGRES_PASSWORD=myodoo
       - POSTGRES_USER=odoo
-    command: ["postgres", "-c", "log_statement=all"]
-
+      - POSTGRES_HOST_AUTH_METHOD=trust
 
   pgadmin:
     container_name: pgadmin4_container
