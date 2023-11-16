@@ -5,21 +5,23 @@ services:
     build:
       context: ..
       dockerfile: .devcontainer/Dockerfile
-      args:
-        VARIANT: 3.9
-        USER_UID: 1000
-        USER_GID: 1000
         
     volumes:
+      - ../odoo/config:/etc/odoo
       - ..:/workspace:cached
-
+    environment:
+    - HOST=db
+    - USER=odoo
+    - PASSWORD=myodoo
+    
     # Overrides default so things don't shut down after the process ends
     command: sleep infinity
 
     # Runs app on the same network as the database container,
     # allows "forwardPorts" in devcontainer.json function
     network_mode: service:db
-    
+    depends_on:
+      - "db"
   db:
     image: postgres:latest
     restart: always

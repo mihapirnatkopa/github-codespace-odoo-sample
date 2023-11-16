@@ -3,14 +3,11 @@
 	"dockerComposeFile": "docker-compose.yml",
 	"service": "app",
 	"workspaceFolder": "/workspace",
-	"features": {
-		"ghcr.io/devcontainers/features/docker-in-docker:2": {}
-
-	},
 	"customizations": {
 		"vscode": {
 			// Add the IDs of extensions you want installed when the container is created.
 			"extensions": [
+				"ms-azuretools.vscode-docker",
 				"ms-python.python",
 				"ms-python.vscode-pylance",
 				"mtxr.sqltools",
@@ -41,8 +38,8 @@
 		8069, 5432, 80
 	],
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "docker-compose -f odoo/docker-compose.yml up -d",
-	"remoteUser": "vscode",
+	//"postCreateCommand": "docker-compose -f odoo/docker-compose.yml up -d",
+	"remoteUser": "odoo",
 	"portsAttributes": {
 		"80": {
 			"label": "pgAdmin4"

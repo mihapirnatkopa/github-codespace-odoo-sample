@@ -1,8 +1,11 @@
-FROM mcr.microsoft.com/vscode/devcontainers/python:0-3
+# Any generic, debian-based image. ( https://github.com/devcontainers/features#usage )
+FROM odoo:16.0
 
-RUN curl -fsSL https://aka.ms/install-azd.sh | bash
-
-ENV PYTHONUNBUFFERED 1
+USER root
 
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-    && apt-get -y install --no-install-recommends postgresql-client
+    && apt-get -y install --no-install-recommends postgresql-client git
+
+USER odoo
+# change shell to bash for terminal to work https://stackoverflow.com/a/72897273/4078503
+ENV SHELL /bin/bash
