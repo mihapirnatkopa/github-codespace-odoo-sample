@@ -1,7 +1,0 @@
-{
-    "python.testing.pytestArgs": [
-        "addons"
-    ],
-    "python.testing.unittestEnabled": false,
-    "python.testing.pytestEnabled": true
-}
