@@ -1,4 +1,6 @@
+.devcontainer/.env
 odoo/data/*
 odoo/config/*
 !odoo/config/odoo.conf
 __pycache__
+.vscode/settings.json

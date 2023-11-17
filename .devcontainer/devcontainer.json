@@ -1,4 +1,10 @@
 {
+	// make mounts work for both github codespace and local dev containers
+	// https://github.com/microsoft/vscode-remote-release/issues/6844#issuecomment-1252288457
+	// file must be executable
+	"initializeCommand": [
+		"./.devcontainer/initializeCommand.sh"
+	],
 	"name": "odoo-test",
 	"dockerComposeFile": "docker-compose.yml",
 	"service": "app",
