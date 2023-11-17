@@ -24,6 +24,12 @@
 				"GrapeCity.gc-excelviewer"
 			],
 			"settings": {
+				"python.defaultInterpreterPath": "/usr/bin/python3",
+				"python.testing.pytestArgs": [
+					"addons"
+				],
+				"python.testing.unittestEnabled": false,
+				"python.testing.pytestEnabled": true,
 				"sqltools.connections": [
 					{
 						"name": "Odoo database",
@@ -44,7 +50,7 @@
 		8069, 5432, 80
 	],
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "sudo ln -s ${localWorkspaceFolder}/addons/* /mnt/extra-addons && sudo cp ${localWorkspaceFolder}/odoo/config/odoo.conf /etc/odoo/ &&  sudo service odoo restart",
+	"postCreateCommand": "sudo ln -s ${localWorkspaceFolder}/addons/* /mnt/extra-addons && sudo cp ${localWorkspaceFolder}/odoo/config/odoo.conf /etc/odoo/ && sudo pip3 install -r ${localWorkspaceFolder}/requirements.txt  &&  sudo service odoo restart",
 
 	"remoteUser": "odoo",
 	"portsAttributes": {
