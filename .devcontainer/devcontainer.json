@@ -44,7 +44,8 @@
 		8069, 5432, 80
 	],
 	// Use 'postCreateCommand' to run commands after the container is created.
-	//"postCreateCommand": "docker-compose -f odoo/docker-compose.yml up -d",
+	"postCreateCommand": "sudo ln -s ${localWorkspaceFolder}/addons/* /mnt/extra-addons && sudo cp ${localWorkspaceFolder}/odoo/config/odoo.conf /etc/odoo/ &&  sudo service odoo restart",
+
 	"remoteUser": "odoo",
 	"portsAttributes": {
 		"80": {
