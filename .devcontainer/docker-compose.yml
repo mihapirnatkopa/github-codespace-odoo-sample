@@ -30,6 +30,7 @@ services:
       - POSTGRES_DB=postgres
       - POSTGRES_PASSWORD=myodoo
       - POSTGRES_USER=odoo
+      # in local dev-container connection is not localhost, but some internal docker network, see https://stackoverflow.com/a/60262636/4078503
       - POSTGRES_HOST_AUTH_METHOD=trust
 
   pgadmin:

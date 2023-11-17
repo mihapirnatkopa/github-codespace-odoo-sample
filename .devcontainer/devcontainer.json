@@ -50,7 +50,8 @@
 		8069, 5432, 80
 	],
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "sudo ln -s ${localWorkspaceFolder}/addons/* /mnt/extra-addons && sudo cp ${localWorkspaceFolder}/odoo/config/odoo.conf /etc/odoo/ && sudo pip3 install -r ${localWorkspaceFolder}/requirements.txt  &&  sudo service odoo restart",
+	// This is a workaround for local dev-containers failing to bind mount etc and addons
+	"postCreateCommand": "sudo service odoo stop && sudo ln -s ${localWorkspaceFolder}/addons/* /mnt/extra-addons && sudo cp ${localWorkspaceFolder}/odoo/config/odoo.conf /etc/odoo/ && sudo pip3 install -r ${localWorkspaceFolder}/requirements.txt  &&  sudo service odoo start",
 
 	"remoteUser": "odoo",
 	"portsAttributes": {
