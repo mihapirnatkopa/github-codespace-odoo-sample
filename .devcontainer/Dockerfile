@@ -7,7 +7,7 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && apt-get -y install --no-install-recommends postgresql-client git sudo
 RUN usermod -aG sudo odoo
 RUN echo "odoo ALL=(ALL:ALL) NOPASSWD: ALL" >> /etc/sudoers
-RUN pip3 install pytest-odoo coverage pytest-html
+RUN pip3 install pytest-odoo coverage pytest-html debugpy
 
 USER odoo
 # change shell to bash for terminal to work https://stackoverflow.com/a/72897273/4078503
