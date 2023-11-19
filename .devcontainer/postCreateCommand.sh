@@ -29,7 +29,5 @@ sudo service odoo start
 # install python requirements
 sudo pip3 install -r ./requirements.txt
 
-# activate developer mode
-wget http://localhost:8069/web?debug=1 -nv -O -  > /dev/null
 
 
