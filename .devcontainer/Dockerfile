@@ -4,7 +4,7 @@ FROM odoo:16.0
 USER root
 
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-    && apt-get -y install --no-install-recommends postgresql-client git sudo
+    && apt-get -y install --no-install-recommends postgresql-client git sudo wget
 RUN usermod -aG sudo odoo
 RUN echo "odoo ALL=(ALL:ALL) NOPASSWD: ALL" >> /etc/sudoers
 RUN pip3 install pytest-odoo coverage pytest-html debugpy
