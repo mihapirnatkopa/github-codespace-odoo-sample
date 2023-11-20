@@ -23,5 +23,5 @@ tail -f /var/log/odoo/odoo-server.log
 ## Enable debug
 Search for module debugpy and activate it
 ![image info](./readme/debugpy.jpg)
-Ready to start debugger
+Ready to start debugger\
 ![image info](./readme/debugpy-activated.jpg)
