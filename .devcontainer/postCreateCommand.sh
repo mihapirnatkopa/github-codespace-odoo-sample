@@ -6,9 +6,6 @@ sudo service odoo stop
 # load enviroment variables from initializeCommand.sh
 source .devcontainer/.env
 
-# install Odoo App DebugPY for Visual Studio Code
-mkdir ${localWorkspaceFolder}/addons/odoo-vscode && git clone https://github.com/tosolini/odoo-vscode.git ${localWorkspaceFolder}/addons/odoo-vscode
-
 # local dev-container workaround
 if [[ $localWorkspaceFolder != "/var/lib/docker/codespacemount"* ]]; then    
 
