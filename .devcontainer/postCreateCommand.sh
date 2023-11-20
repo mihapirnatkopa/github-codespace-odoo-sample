@@ -1,13 +1,13 @@
 #!/bin/bash -i
 
+# stop odoo service until we set some things up
+sudo service odoo stop
+
 # load enviroment variables from initializeCommand.sh
 source .devcontainer/.env
 
 # install Odoo App DebugPY for Visual Studio Code
 mkdir ${localWorkspaceFolder}/addons/odoo-vscode && git clone https://github.com/tosolini/odoo-vscode.git ${localWorkspaceFolder}/addons/odoo-vscode
-
-# stop odoo service until we set some things up
-sudo service odoo stop
 
 # local dev-container workaround
 if [[ $localWorkspaceFolder != "/var/lib/docker/codespacemount"* ]]; then    
@@ -22,6 +22,8 @@ if [[ $localWorkspaceFolder != "/var/lib/docker/codespacemount"* ]]; then
     sudo rm /etc/odoo/odoo.conf
     sudo ln -s ${localWorkspaceFolder}/odoo/config/odoo.conf /etc/odoo/
 fi
+
+(sleep 5 && sudo ln -snf /usr/lib/python3/dist-packages/odoo ${localWorkspaceFolder}/odoo/src) &
 
 # start odoo service again
 sudo service odoo start
