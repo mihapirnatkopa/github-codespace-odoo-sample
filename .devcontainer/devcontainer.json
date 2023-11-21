@@ -16,6 +16,10 @@
 				"ms-azuretools.vscode-docker",
 				"ms-python.python",
 				"ms-python.vscode-pylance",
+				"ms-python.pylint",
+				"ms-python.autopep8",
+				"charliermarsh.ruff",
+				"dbaeumer.vscode-eslint",
 				"mtxr.sqltools",
 				"mtxr.sqltools-driver-pg",
 				"tomoki1207.pdf",
@@ -30,6 +34,14 @@
 				],
 				"python.testing.unittestEnabled": false,
 				"python.testing.pytestEnabled": true,
+				"python.formatting.provider": "autopep8",
+				"ruff.lint.args": [
+					"--ignore E501,E301,E302"
+				],
+				"eslint.options": {
+					"overrideConfigFile": "/workspace/.eslintrc.json"
+				},
+				"eslint.alwaysShowStatus": true,
 				"sqltools.connections": [
 					{
 						"name": "Odoo database",
@@ -47,15 +59,15 @@
 	},
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	"forwardPorts": [
-		8069, 5432, 80
+		8069,
+		5432,
+		80
 	],
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// file must be executable
 	"postCreateCommand": "./.devcontainer/postCreateCommand.sh",
-
 	// Starting Odoo now when everything is ready
 	"postAttachCommand": "odoo&",
-
 	"remoteUser": "odoo",
 	"portsAttributes": {
 		"80": {
