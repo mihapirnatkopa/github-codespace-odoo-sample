@@ -19,6 +19,7 @@
 				"ms-python.pylint",
 				"ms-python.autopep8",
 				"charliermarsh.ruff",
+				"njpwerner.autodocstring",
 				"dbaeumer.vscode-eslint",
 				"mtxr.sqltools",
 				"mtxr.sqltools-driver-pg",
@@ -29,6 +30,7 @@
 			],
 			"settings": {
 				"python.defaultInterpreterPath": "/usr/bin/python3",
+				"python.analysis.extraPaths": ["odoo/src"],
 				"python.testing.pytestArgs": [
 					"addons"
 				],
@@ -39,7 +41,7 @@
 					"--ignore E501,E301,E302"
 				],
 				"eslint.options": {
-					"overrideConfigFile": "/workspace/.eslintrc.json"
+					"overrideConfigFile": ".eslintrc.json"
 				},
 				"eslint.alwaysShowStatus": true,
 				"sqltools.connections": [
