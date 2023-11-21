@@ -53,6 +53,9 @@
 	// file must be executable
 	"postCreateCommand": "./.devcontainer/postCreateCommand.sh",
 
+	// Starting Odoo now when everything is ready
+	"postAttachCommand": "odoo&",
+
 	"remoteUser": "odoo",
 	"portsAttributes": {
 		"80": {
@@ -60,6 +63,9 @@
 		},
 		"5432": {
 			"label": "PostgresSQL"
+		},
+		"5678": {
+			"label": "debugPy Odoo"
 		},
 		"8069": {
 			"label": "Odoo"

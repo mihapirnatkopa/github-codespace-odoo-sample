@@ -5,3 +5,4 @@ odoo/config/*
 __pycache__
 .vscode/settings.json
 odoo/src
+var/lib

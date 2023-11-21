@@ -1,8 +1,5 @@
 #!/bin/bash -i
 
-# stop odoo service until we set some things up
-sudo service odoo stop
-
 # load enviroment variables from initializeCommand.sh
 source .devcontainer/.env
 
@@ -20,13 +17,7 @@ if [[ $localWorkspaceFolder != "/var/lib/docker/codespacemount"* ]]; then
     sudo ln -s ${localWorkspaceFolder}/odoo/config/odoo.conf /etc/odoo/
 fi
 
-(sleep 5 && sudo ln -snf /usr/lib/python3/dist-packages/odoo ${localWorkspaceFolder}/odoo/src) &
-
-# start odoo service again
-sudo service odoo start
-
 # install python requirements
 sudo pip3 install -r ./requirements.txt
 
-
-
+(sleep 5 && sudo ln -snf /usr/lib/python3/dist-packages/odoo ${localWorkspaceFolder}/odoo/src) &
