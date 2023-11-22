@@ -16,11 +16,10 @@ if [[ $localWorkspaceFolder != "/var/lib/docker/codespacemount"* ]]; then
     sudo rm /etc/odoo/odoo.conf
     sudo ln -s ${localWorkspaceFolder}/odoo/config/odoo.conf /etc/odoo/
     (sleep 5 && sudo ln -snf /usr/lib/python3/dist-packages/odoo ${localWorkspaceFolder}/odoo/src) &
-
+    screen -d -m odoo
 else
     (sleep 5 && sudo ln -snf /usr/lib/python3/dist-packages/odoo /workspace/odoo/src) &
 fi
 
 # install python requirements
 sudo pip3 install -r ./requirements.txt
-screen -d -m odoo
