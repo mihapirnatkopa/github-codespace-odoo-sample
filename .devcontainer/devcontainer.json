@@ -68,8 +68,7 @@
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// file must be executable
 	"postCreateCommand": "./.devcontainer/postCreateCommand.sh",
-	// Starting Odoo now when everything is ready
-	"postAttachCommand": "odoo&",
+	"postAttachCommand": "bash",
 	"remoteUser": "odoo",
 	"portsAttributes": {
 		"80": {

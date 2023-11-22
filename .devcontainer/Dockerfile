@@ -5,7 +5,7 @@ USER root
 
 # Install some additional things
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-    && apt-get -y install --no-install-recommends postgresql-client git sudo wget
+    && apt-get -y install --no-install-recommends postgresql-client git sudo wget screen inotify-tools
 
 # Add sudo support for user odoo
 RUN usermod -aG sudo odoo
