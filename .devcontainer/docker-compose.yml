@@ -15,6 +15,7 @@ services:
       
     environment:
     - OPENERP_SERVER=/etc/odoo/odoo.conf # pytest-odoo config
+    - ODOO_HTTP_SOCKET_TIMEOUT=10 #https://www.odoo.com/es_ES/forum/ayuda-1/why-appeared-blank-page-when-configration-workers-above-0-172882
 
     # Runs app on the same network as the database container,
     # allows "forwardPorts" in devcontainer.json function
