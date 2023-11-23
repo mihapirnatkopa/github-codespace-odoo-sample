@@ -68,7 +68,7 @@
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// file must be executable
 	"postCreateCommand": "./.devcontainer/postCreateCommand.sh",
-	"postAttachCommand": "screen -r",
+	"postAttachCommand": "tail -f screenlog.0",
 	"remoteUser": "odoo",
 	"portsAttributes": {
 		"80": {

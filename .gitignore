@@ -7,3 +7,4 @@ __pycache__
 odoo/src
 var/lib
 node_modules
+screenlog.*
