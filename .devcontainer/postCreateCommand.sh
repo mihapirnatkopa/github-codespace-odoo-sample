@@ -12,6 +12,7 @@ if [[ $localWorkspaceFolder != "/var/lib/docker/codespacemount"* ]]; then
     screen -d -m env WS=${localWorkspaceFolder} bash -c 'while true; do odoo -c /etc/odoo/odoo.conf --dev=all --log-level=debug --addons-path ${WS}/addons/; sleep 1; done'
 else
     (sleep 5 && sudo ln -snf /usr/lib/python3/dist-packages/odoo /workspace/odoo/src) &
+    screen -d -m env WS=/workspace bash -c 'while true; do odoo -c /etc/odoo/odoo.conf --dev=all --log-level=debug --addons-path /workspace/addons/; sleep 1; done'
 fi
 
 # install python requirements
