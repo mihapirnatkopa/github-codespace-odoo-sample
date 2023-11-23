@@ -68,7 +68,7 @@
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// file must be executable
 	"postCreateCommand": "./.devcontainer/postCreateCommand.sh",
-	//"postAttachCommand": "odoo -c /etc/odoo/odoo.conf --dev=all --log-level=debug &",
+	"postAttachCommand": "screen -r",
 	"remoteUser": "odoo",
 	"portsAttributes": {
 		"80": {
