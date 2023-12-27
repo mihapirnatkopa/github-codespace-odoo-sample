@@ -8,3 +8,5 @@ odoo/src
 var/lib
 node_modules
 screenlog.*
+enterprise/*
+*.tgz
