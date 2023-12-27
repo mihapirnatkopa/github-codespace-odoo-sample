@@ -25,3 +25,9 @@ Pass: myodoo
 ## Odoo server log in terminal
 tail -f /var/log/odoo/odoo-server.log 
 
+## Enterprise
+- Unpack enterprise modules under */workspace/enterprise*
+- Rebuild container
+- Install *web_enterprise* module
+
+Documentation: [Switch from Community to Enterprise](https://www.odoo.com/documentation/16.0/administration/maintain/enterprise.html)
