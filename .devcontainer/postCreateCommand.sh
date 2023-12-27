@@ -11,6 +11,7 @@ if [[ $localWorkspaceFolder != "/var/lib/docker/codespacemount"* ]]; then
     (sleep 5 && sudo ln -snf /usr/lib/python3/dist-packages/odoo ${localWorkspaceFolder}/odoo/src) &
 
     if test -f "${WS}/enterprise"; then
+        /usr/bin/odoo -c /etc/odoo/odoo.conf -i web_enterprise --stop-after-init
         screen -L -d -m env WS=${localWorkspaceFolder} bash -c 'while true; do odoo -c /etc/odoo/odoo.conf --dev=reload --log-level=debug --addons-path "${WS}/addons/,${WS}/enterprise/"; sleep 1; done'
     else
         screen -L -d -m env WS=${localWorkspaceFolder} bash -c 'while true; do odoo -c /etc/odoo/odoo.conf --dev=reload --log-level=debug --addons-path ${WS}/addons/; sleep 1; done'
@@ -18,6 +19,7 @@ if [[ $localWorkspaceFolder != "/var/lib/docker/codespacemount"* ]]; then
 else
     (sleep 5 && sudo ln -snf /usr/lib/python3/dist-packages/odoo /workspace/odoo/src) &
     if test -f "/workspace/enterprise"; then
+        /usr/bin/odoo -c /etc/odoo/odoo.conf -i web_enterprise --stop-after-init
         screen -L -d -m env WS=/workspace bash -c 'while true; do odoo -c /etc/odoo/odoo.conf --dev=reload --log-level=debug --addons-path "/workspace/addons/,/workspace/enterprise"; sleep 1; done'
     else
         screen -L -d -m env WS=/workspace bash -c 'while true; do odoo -c /etc/odoo/odoo.conf --dev=reload --log-level=debug --addons-path /workspace/addons/; sleep 1; done'
