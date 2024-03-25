@@ -27,6 +27,9 @@ tail -f /var/log/odoo/odoo-server.log
 
 ## Enterprise
 - Unpack enterprise modules under */workspace/enterprise*
+    - Copy to root folder (/workspace)
+    - Extract: `tar -xvzf $(find odoo*+e*.tar.gz)`
+    - Move addons: `mv $(find odoo-17.0+e* -type d -name 'addons' | head -n 1) /workspace/enterprise`
 - Rebuild container
 - Install *web_enterprise* module
 

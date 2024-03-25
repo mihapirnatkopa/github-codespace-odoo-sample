@@ -10,7 +10,7 @@ if [[ $localWorkspaceFolder != "/var/lib/docker/codespacemount"* ]]; then
     sudo ln -s ${localWorkspaceFolder}/odoo/config/odoo.conf /etc/odoo/
     (sleep 5 && sudo ln -snf /usr/lib/python3/dist-packages/odoo ${localWorkspaceFolder}/odoo/src) &
 
-    if test -d "${WS}/enterprise"; then
+    if test -d "${localWorkspaceFolder}/enterprise"; then
         /usr/bin/odoo -c /etc/odoo/odoo.conf -i web_enterprise --stop-after-init
         screen -L -d -m env WS=${localWorkspaceFolder} bash -c 'while true; do odoo -c /etc/odoo/odoo.conf --dev=reload --log-level=debug --addons-path "${WS}/addons/,${WS}/enterprise/"; sleep 1; done'
     else
