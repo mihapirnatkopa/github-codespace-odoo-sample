@@ -10,3 +10,5 @@ node_modules
 screenlog.*
 enterprise/*
 *.tgz
+*.tar.gz
+odoo-*
