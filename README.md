@@ -31,3 +31,12 @@ tail -f /var/log/odoo/odoo-server.log
 - Install *web_enterprise* module
 
 Documentation: [Switch from Community to Enterprise](https://www.odoo.com/documentation/16.0/administration/maintain/enterprise.html)
+
+## Tracing with Hunter
+[Hunter](https://github.com/ionelmc/python-hunter) is a flexible code tracing toolkit, not for measuring coverage, but for debugging, logging, inspection and other nefarious purposes
+
+**Attach to Odoo process**
+`hunter-trace -p $(pgrep -f /usr/bin/odoo)`
+
+**Documentation** 
+- [Hunter Cookbook](https://python-hunter.readthedocs.io/en/latest/cookbook.html#walkthrough)

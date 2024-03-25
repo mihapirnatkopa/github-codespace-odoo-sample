@@ -10,7 +10,7 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
 # Add sudo support for user odoo
 RUN usermod -aG sudo odoo
 RUN echo "odoo ALL=(ALL:ALL) NOPASSWD: ALL" >> /etc/sudoers
-RUN pip3 install pytest-odoo coverage pytest-html debugpy ruff
+RUN pip3 install pytest-odoo coverage pytest-html debugpy ruff hunter
 
 # https://github.com/nodesource/distributions/issues/1157
 RUN apt remove -y nodejs nodejs-doc libnode-dev
