@@ -40,8 +40,16 @@ Documentation: [Switch from Community to Enterprise](https://www.odoo.com/docume
 ## Tracing with Hunter
 [Hunter](https://github.com/ionelmc/python-hunter) is a flexible code tracing toolkit, not for measuring coverage, but for debugging, logging, inspection and other nefarious purposes
 
+Note that [Remote tracing](https://python-hunter.readthedocs.io/en/latest/remote.html) needs OPTIONS, not environment variable
+
 **Attach to Odoo process**
 `hunter-trace -p $(pgrep -f /usr/bin/odoo)`
 
 **Documentation** 
 - [Hunter Cookbook](https://python-hunter.readthedocs.io/en/latest/cookbook.html#walkthrough)
+
+**Examples**
+* Show only addons
+ `hunter-trace -p $(pgrep -f /usr/bin/odoo) "hunter.Q(filename_contains='addons')"`  
+* Show only addons callstack
+ `hunter-trace -p $(pgrep -f /usr/bin/odoo) "hunter.Q(filename_contains='addons'),~hunter.Q(kind='line')"`
